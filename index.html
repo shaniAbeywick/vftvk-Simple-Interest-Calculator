@@ -1,16 +1,73 @@
 <html>
-    <head>
+
+<head>
+    <title>Web App - Simple Interest Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+    
+</head>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<body>
+    
+      <div class="container">
+       
+          <h1 class="title">Simple Interest Calculator</h1>
+          <ul style="list-style-type:none;">
+            <li><label>Amount </label>  &emsp;&emsp;&emsp;&nbsp;<input type="number" id="principal"></li>
+            
+            <li><label for="vol">Rate </label> &emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="range" id="vol" name="vol" min="1" max="100"  onchange="show_value(this.value)"> <span id="rate"></span> <br /> </li>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+             <li><label for="years" >No. of Years</label> &emsp;
+                <select name="years" id="years">
+                               <option value="1">1</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                </select> 
+             </li> 
+
+             <li>
+                <button onclick="compute()">Compute Interest</button>
+             </li>
+
+             <li>
+                <p id="output_1"></p>
+             </li>
+             <li>
+                <p id="output_2"></p>
+             </li>
+             <li>
+                <p id="output_3"></p>
+             </li>
+             <li>
+                <p id="output_4"></p>
+             </li>
+        
+        
+        
+        
+          </ul>
+               
+      </div>
+
+
+    <script>
+
+        function show_value(x) {
+            document.getElementById("rate").innerHTML=x +"%";
+        }
+        
+        
+        
+    </script>
+      
+   
+    
+
+      
+    
+
+</body>
+
 </html>
